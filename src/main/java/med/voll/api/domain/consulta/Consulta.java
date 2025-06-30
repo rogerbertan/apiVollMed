@@ -1,11 +1,14 @@
 package med.voll.api.domain.consulta;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.domain.medico.Medico;
+import med.voll.api.domain.paciente.Paciente;
 
 import java.time.LocalDateTime;
 
@@ -27,7 +30,7 @@ public class Consulta {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")
-    private Medico paciente;
+    private Paciente paciente;
 
     private LocalDateTime data;
 }
